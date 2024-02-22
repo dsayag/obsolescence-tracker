@@ -1,0 +1,23 @@
+<!-- Navbar -->
+<div class="navbar-fixed">
+  <nav role="navigation" class="#ffffff white">
+    <div class="nav-wrapper container">
+        <a [routerLink]="['/']" class="brand-logo"><i class="material-icons logo #4caf50 green">memory</i><span>OBS Tracker</span></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a [routerLink]="['/qui-sommes-nous']" class="#4caf50 green-text"><i class="material-icons left">home</i>Home</a></li>
+        <li><a [routerLink]="['/qui-sommes-nous']" class="#4caf50 green-text">Research</a></li>
+        <li><a [routerLink]="['/qui-sommes-nous']" class="#4caf50 green-text">FAQ</a></li>
+        <li><a [routerLink]="['/nos-magasins']" class="#4caf50 green-text">Contact</a></li>
+        <li><a class="btn #f9a825 yellow darken-3" [routerLink]="['/articles']">Sign-up</a></li>
+        <li><a class="btn #4caf50 green" [routerLink]="['/articles']">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+      <li><a [routerLink]="['/qui-sommes-nous']">Qui sommes-nous</a></li>
+      <li><a [routerLink]="['/nos-magasins']">Nos magasins</a></li>
+      <li><a [routerLink]="['/articles']">Nos rayons</a></li>
+  </ul>
+</div>

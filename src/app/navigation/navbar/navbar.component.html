@@ -1,0 +1,67 @@
+<mat-toolbar class="navbar" color="primary">
+  <mat-toolbar-row class="navbar-content">    
+    <!-- Bouton du menu de la sidenav -->
+    <div class="headline" *ngIf="isSmallScreen">
+      <button mat-icon-button aria-label="Menu" (click)="onToggleClose()">
+        <mat-icon>menu</mat-icon>
+      </button>      
+    </div>
+
+    <!-- Menu de navigation -->
+    <div class="navbar-logo">
+      <button mat-button routerLink="">
+        <mat-icon matListItemIcon color="accent">track_changes</mat-icon>
+        <span>Obsolescence tracker</span>
+      </button>
+    </div>    
+
+    <div class="navbar-item" *ngIf="!isSmallScreen"> 
+      <button mat-button routerLink="">
+        <mat-icon matListItemIcon>home</mat-icon>
+        <span>Home</span>
+      </button>
+            
+      <button mat-button routerLink="/research">
+        <mat-icon matListItemIcon>search</mat-icon>
+        <span>Research</span>
+      </button>
+    
+      <button mat-button routerLink="/faq">
+        <mat-icon matListItemIcon>quiz</mat-icon>
+        <span>FAQ</span>
+      </button>
+    
+      <button mat-button routerLink="/contact">
+        <mat-icon matListItemIcon>alternate_email</mat-icon>
+        <span>Contact</span>
+      </button>
+    </div>    
+
+    <div>
+      <!-- <a mat-button class="mr-3">{{ isLoggedIn ? '' : 'Login' }}</a> -->
+
+      <!-- <span>, Not registered </span>  -->
+      <button mat-button class="mr-3" routerLink="/login" *ngIf="!isLoggedIn">               
+        <span>Login</span>
+      </button>
+    
+      <!-- <span>, Not registered </span>  -->
+      <button mat-raised-button color="accent" routerLink="/register" *ngIf="!isLoggedIn">               
+        <span>Sign up</span>
+      </button>
+      
+      <!-- Affichae de la card de l'utilisateur connecté-->
+    <mat-card class="bg-amber-500" *ngIf="isLoggedIn">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title class="text-neutral-950">{{ firstname }} {{ lastname }}</mat-card-title>
+        <mat-card-subtitle><a href="#">View profile</a></mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+
+    </div>
+    
+    
+
+  </mat-toolbar-row>  
+</mat-toolbar>

@@ -1,0 +1,10 @@
+<div class="container">
+    <h2 *ngIf="article?.name" class="center">Editer l'article : {{ article?.name }}</h2>
+    <div *ngIf="article" class="center">
+        <img [src]="article.urlImg">
+    </div>
+<app-article-form *ngIf="article" [article]="article"></app-article-form>
+</div>
+<div *ngIf='!article' class="center">
+    <app-loader></app-loader>
+</div>

@@ -1,0 +1,40 @@
+<!-- Title page -->
+<div class="flex py-5 px-44">
+    <h5 class="mat-headline-6 text-teal-600">Login</h5>
+</div>
+
+<div class="flex py-10 justify-center">
+    <mat-card class="flex-row p-4 m-2 justify-center">
+        <mat-card-header class="p-4 m-2 justify-center">
+            <div class="example-button-container">
+                <button mat-fab disabled aria-label="Example icon button with a heart icon">
+                  <mat-icon>person</mat-icon>
+                </button>
+              </div>                                  
+        </mat-card-header>
+        <mat-card-title class="text-teal-600 text-center p-4 m-2">Login</mat-card-title>
+        <mat-card-content class="flex flex-col">
+
+            <!-- // Formulaire -->
+            <!-- form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm"-->
+            <form #loginForm="ngForm">                          
+                <mat-form-field>
+                    <mat-label>Username</mat-label>
+                        <input type="text" matInput placeholder="Username" name="username" [(ngModel)]="username" required>
+                </mat-form-field>                
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput placeholder="Password" name="password" [(ngModel)]="password" required>
+                </mat-form-field>                
+                
+                <button mat-button routerLink="/register" class="mb-3">{{ message }}</button>
+
+                <!-- Le bouton est désactivé tant que tous les champs ne sont pas rempli -->
+                <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid" (click)="login()" *ngIf="!auth.isLoggedIn">Log In</button>
+                
+                <!-- Le bouton est désactivé tant que tous les champs ne sont pas rempli -->
+                <button mat-raised-button color="primary" type="submit" (click)="logout()" *ngIf="auth.isLoggedIn">Log Out</button>                          
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

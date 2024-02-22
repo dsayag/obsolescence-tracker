@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+  <mat-icon matListItemIcon color="accent">qr_code_scanner</mat-icon>
+    <span>Obsolescence tracker</span>
+</mat-toolbar>
+
+<mat-nav-list>  
+
+  <mat-list-item routerLink="" (click)="onToggleClose()">
+    <mat-icon matListItemIcon color="accent">home</mat-icon>
+    <a matListItemTitle>Home</a>
+  </mat-list-item>
+  
+  <mat-list-item routerLink="/research" (click)="onToggleClose()">
+    <mat-icon matListItemIcon>search</mat-icon>
+    <a matListItemTitle>Research</a>
+  </mat-list-item>
+
+  <mat-list-item routerLink="/faq" (click)="onToggleClose()">
+    <mat-icon matListItemIcon>quiz</mat-icon>
+    <a matListItemTitle>FAQ</a>
+  </mat-list-item>
+
+  <mat-list-item routerLink="/contact" (click)="onToggleClose()">
+    <mat-icon matListItemIcon>alternate_email</mat-icon>
+    <a matListItemTitle>Contact</a>
+  </mat-list-item>
+
+</mat-nav-list>

@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">                        
+        <app-search-article></app-search-article>
+        <div *ngFor="let article of articleList" class="col s12 m4">                      
+            <!-- <div class="card" (click)="selectArticle(article.articleName)" articleBorderCard> -->
+            <div class="card" (click)="goToArticleDetail(article)" articleBorderCard>
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" [src]="article.urlImg">
+                <h1 class="activator card-title teal text-lighten-1">{{ article.name }}</h1>
+            </div>
+            <div class="card-content">                  
+                <h5 class="activator teal-text text-lighten-3">{{ article.brand }}</h5>
+                <span *ngFor="let category of article.categories" class="{{ category | articleTypeColor }} activator">{{ category }}</span>
+                <h6 class="activator">{{ article.price }} €</h6>
+                <div class="activator">{{ article.available }}</div>
+                <div class="activator"><small>{{ article.created | date: 'dd/MM/yy, à HH:mm' }}</small></div>                
+                <div><a class="activator btn-floating waves-effect waves-light teal"><i class="material-icons">add</i></a></div>
+            </div>            
+            </div>
+        </div>                  
+    </div>
+</div>
+
+<div>
+    <a
+        class="activator btn-floating btn-large waves-effect waves-light #ff7043 deep-orange lighten-1 z-depth-3"
+        style="position: fixed; bottom: 25px; right: 25px;"
+        routerLink="/article/add">
+        <i class="material-icons">add</i>
+    </a>
+</div>
+<div *ngIf='!articleList' class="center">
+    <app-loader></app-loader>
+</div>

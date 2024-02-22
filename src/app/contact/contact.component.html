@@ -1,0 +1,41 @@
+<!-- Title page -->
+<div class="flex py-5 px-44 ">
+  <h5 class="mat-headline-6 text-teal-600">Contact</h5>
+</div>
+
+<!-- Image  -->
+<div class="flex justify-center items-center py-2">
+  <img src="/assets/img/contact-illustration.png" width="400" height="400" alt="Illustration obsolescence tracker">
+</div>
+
+<!-- Contenu principal --> 
+<div class="flex-auto py-20 px-44 bg-white">  
+
+  <!-- Formulaire -->
+    <form class="flex flex-col basis-0 bg-white rounded-lg p-4 m-2 ring-1 ring-slate-900/5 shadow-xl">
+    
+      <mat-form-field>
+        <mat-label>Enter your complete name</mat-label>
+        <input matInput placeholder="John Doe" [(ngModel)]="nom" name="nom" required>        
+      </mat-form-field>    
+      
+      <mat-form-field>
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="name@example.com" [formControl]="email" name="email" required>
+        @if (email.invalid) {
+          <mat-error>{{ getErrorMessageEmail() }}</mat-error>
+        }
+      </mat-form-field>    
+
+      <mat-form-field>
+        <mat-label>Message</mat-label>
+        <textarea matInput [(ngModel)]="message" name="message" required></textarea>
+      </mat-form-field>
+      
+      <button mat-raised-button color="primary" class="mybtncontact" type="submit" (click)="onSubmit()">Submit</button>
+
+    </form>
+ 
+</div>
+
+

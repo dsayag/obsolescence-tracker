@@ -1,0 +1,21 @@
+  <mat-sidenav-container>
+    <!-- Barre de navigation latérale -->
+    <mat-sidenav #sidenav>
+      <app-sidenav (closeSideNav)="sidenav.close()"></app-sidenav>    
+    </mat-sidenav>
+
+    <!-- Contenu principal -->
+    <mat-sidenav-content>    
+
+      <!-- Barre de navigation centrale (nav) -->     
+      <app-navbar (closeSideNav)="sidenav.toggle()"></app-navbar>
+
+      <!-- Contenu principal -->
+      <router-outlet></router-outlet>       
+
+      <!-- Barre de navigation de pied de page (footer) -->
+      <app-footer></app-footer>
+
+    </mat-sidenav-content>
+</mat-sidenav-container>
+ 

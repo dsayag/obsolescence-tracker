@@ -1,0 +1,56 @@
+.logo-container {
+    width: 100%;
+}
+
+.website-name{
+  margin-left: 8px;
+}
+
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar-row{
+  display: flex;
+}
+
+.navbar-content{
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+}
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headline{
+  display: flex;
+  align-items: center;
+}
+
+.example-header-image {
+  background-image: url('../../../assets/img/photo-id-david-sayag-2020-carre-150.jpg');
+  background-size: cover;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+mat-card{
+  background-color: #ffc107;
+}

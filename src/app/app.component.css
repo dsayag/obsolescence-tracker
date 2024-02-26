@@ -44,3 +44,9 @@ mat-sidenav {
   overflow: auto;
   flex-grow: 1;
 }
+
+mat-sidenav-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

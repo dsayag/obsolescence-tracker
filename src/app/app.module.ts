@@ -29,7 +29,6 @@ import { ResearchComponent } from './research/research.component';
 import { FaqComponent } from './faq/faq.component';
 import { ContactComponent } from './contact/contact.component';
 import { AdminComponent } from './admin/admin.component';
-import { AuthenticationComponent } from './authentication/authentication.component';
 import { ResearchAppComponent } from './research-app/research-app.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDividerModule } from '@angular/material/divider';
@@ -50,7 +49,6 @@ import { RegisterComponent } from './authentication/register/register.component'
     FooterComponent,    
     AdminComponent,
     ResearchAppComponent,
-    AuthenticationComponent,
     ResearchComponent,
     LoginComponent,
     RegisterComponent, 

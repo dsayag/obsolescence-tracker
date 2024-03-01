@@ -41,27 +41,28 @@
       <!-- <a mat-button class="mr-3">{{ isLoggedIn ? '' : 'Login' }}</a> -->
 
       <!-- <span>, Not registered </span>  -->
-      <button mat-button class="mr-3" routerLink="/login" *ngIf="!isLoggedIn">               
+      <button mat-button class="mr-3" routerLink="/login" *ngIf="!isLoggedIn">
+        <mat-icon>login</mat-icon>               
         <span>Login</span>
       </button>
     
       <!-- <span>, Not registered </span>  -->
-      <button mat-raised-button color="accent" routerLink="/register" *ngIf="!isLoggedIn">               
+      <button mat-raised-button color="accent" routerLink="/sign-up" *ngIf="!isLoggedIn">               
         <span>Sign up</span>
       </button>
       
-      <!-- Affichae de la card de l'utilisateur connecté-->
+      <!-- Affichage de la card de l'utilisateur connecté-->
     <mat-card class="bg-amber-500" *ngIf="isLoggedIn">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title class="text-neutral-950">{{ firstname }} {{ lastname }}</mat-card-title>
-        <mat-card-subtitle><a href="#">View profile</a></mat-card-subtitle>
+        <mat-card-subtitle>
+          <a routerLink="/admin">View profile</a>
+        </mat-card-subtitle>
+        <mat-icon (click)="logout()" class="logout" >highlight_off</mat-icon>
       </mat-card-header>
     </mat-card>
-
-    </div>
-    
-    
+    </div>    
 
   </mat-toolbar-row>  
 </mat-toolbar>

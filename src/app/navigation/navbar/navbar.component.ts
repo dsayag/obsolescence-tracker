@@ -73,6 +73,12 @@ export class NavbarComponent implements OnInit {
   /* Get Login status */
   get isLoggedIn(): boolean {
     return this.authenticationService.isLoggedIn;
-  }  
+  }
+
+  /* Log out */
+  logout() {
+    this.auth.logout(); 
+    this.router.navigate(['/research']);  
+  }
 
 }

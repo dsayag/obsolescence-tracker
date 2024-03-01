@@ -54,3 +54,7 @@ mat-toolbar-row{
 mat-card{
   background-color: #ffc107;
 }
+
+mat-icon.logout{
+  cursor: pointer;
+}

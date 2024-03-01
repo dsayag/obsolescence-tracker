@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/authentication.service';
 
@@ -13,7 +13,12 @@ export class LoginComponent implements OnInit {
   password: string; 
   message: string = "You are not connected.";
   auth: AuthenticationService;
-  loginForm: NgForm;
+  //loginForm: NgForm;
+
+  loginform: FormGroup = new FormGroup({
+    username: new FormControl(''),
+    password: new FormControl('')
+  });
   
   constructor(
     private authenticationService: AuthenticationService,
@@ -34,13 +39,14 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.message = 'Connection in progress...';
-    this.auth.login(this.username, this.password)
+    const { username, password } = this.loginform.value;
+    this.auth.login(username, password)
       .subscribe((isLoggedIn: boolean) => {
         this.setMessage();
         if(isLoggedIn){
-          this.router.navigate(['/research-app']);
+          this.router.navigate(['/research-tracker']);
         } else {
-          this.password = "";
+          this.loginform.reset();
           this.router.navigate(['/login']);
         }        
       })
@@ -51,13 +57,11 @@ export class LoginComponent implements OnInit {
     this.message = "You are not connected."
   }
 
-  // Vérification que tous les champs requis sont rempli
-  /* onSubmit() {
-    if(this.loginForm.invalid) {
-      console.log("Erreur de saisie", this.loginForm.value)
-    } else {
-      console.log("Formulaire ok", this.loginForm.value);    
-    }    
-  } */
-
+  onSubmit() {
+    const formData = this.loginform.value;
+    console.log(formData);
+    if(this.loginform.valid){
+      this.login();
+    }
+  }
 }

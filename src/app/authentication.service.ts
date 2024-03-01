@@ -8,8 +8,8 @@ export class AuthenticationService {
   isLoggedIn: boolean = false;
   redirectUrl: string;
 
-  login(name: string, password: string): Observable<boolean> {
-    const isLoggedIn = (name == "admin" && password == "admin");
+  login(username: string, password: string): Observable<boolean> {
+    const isLoggedIn = (username == "admin" && password == "admin");
     console.log("isLoggedIn :", isLoggedIn);    
     if(isLoggedIn === true){
       console.log("Authentication correct");
@@ -23,7 +23,7 @@ export class AuthenticationService {
   }
 
   logout() {
-    this.isLoggedIn = false;
-    console.log("Authentication error");
+    this.isLoggedIn = false;    
+    console.log("Your have logged out");
   }
 }

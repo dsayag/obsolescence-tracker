@@ -49,4 +49,5 @@ mat-sidenav-content{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,150,136,0.15) 100%);
 }

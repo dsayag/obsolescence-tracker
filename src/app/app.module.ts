@@ -29,13 +29,14 @@ import { ResearchComponent } from './research/research.component';
 import { FaqComponent } from './faq/faq.component';
 import { ContactComponent } from './contact/contact.component';
 import { AdminComponent } from './admin/admin.component';
-import { ResearchAppComponent } from './research-app/research-app.component';
+import { ResearchTrackerComponent } from './research-tracker/research-tracker.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { LoginComponent } from './authentication/login/login.component';
-import { RegisterComponent } from './authentication/register/register.component';
+import { SignUpComponent } from './authentication/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -48,10 +49,10 @@ import { RegisterComponent } from './authentication/register/register.component'
     NavbarComponent,
     FooterComponent,    
     AdminComponent,
-    ResearchAppComponent,
+    ResearchTrackerComponent,
     ResearchComponent,
     LoginComponent,
-    RegisterComponent, 
+    SignUpComponent, 
   ],
   imports: [
     BrowserModule,    
@@ -62,10 +63,10 @@ import { RegisterComponent } from './authentication/register/register.component'
     FormsModule,  
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
-    MatCardModule,
-    MatBadgeModule,    
+    MatAutocompleteModule,
+    MatBadgeModule,
     MatButtonModule,
-    MatCardModule,
+    MatCardModule,        
     MatDividerModule,
     MatFormFieldModule,
     MatGridListModule,

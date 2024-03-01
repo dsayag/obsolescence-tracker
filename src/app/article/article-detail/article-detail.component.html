@@ -1,34 +1,46 @@
-<div class="container">
-  <div *ngIf="article" class="row">
-    <div class="col s12 m8 offset-m2">
-      <div class="card">
-        <div class="card-image">
-          <img [src]="article.urlImg">
-          <span class="card-title teal text-lighten-1">{{ article.name }}</span>
-        </div>
-        <div class="card-content">                  
-          <h5 class="teal-text text-lighten-3">{{ article.brand }}</h5>
-          <span *ngFor="let category of article.categories" class="{{ category | articleTypeColor }} activator">{{ category }}</span>
-          <h6>{{ article.price }} €</h6>
-          <p><small>{{ article.created | date: 'dd/MM/yy, à HH:mm' }}</small></p>
-          <p>{{ article.description }}</p>
-        </div>
-      </div>    
-          <div class="row card-action">
-            <div class="col s12 m6 l4">
-              <a class="waves-effect waves-light btn blue" (click)="goToEditArticle(article)">Editer</a>
-            </div>
-            <div class="col s12 m6 l4">
-              <a class="waves-effect waves-light btn teal lighten-2" (click)="goToArticleList()">Retour</a>
-            </div>
-            <div class="col s12 m6 l4">
-              <a class="waves-effect waves-light btn red" (click)="deleteArticle(article)">Supprimer</a>
-            </div>            
-          </div>       
-    </div>
-    
+<!-- Title page -->
+<div class="flex py-5 px-44">
+  <h5 class="mat-headline-6 text-teal-600">Search tracker</h5>
+</div>
+
+<div class="flex py-10 px-44" *ngIf="article">
+  <div class="mr-10">
+
+    <mat-card>
+
+      <mat-card-header>
+        <div mat-card-avatar>
+          <img [src]="article.urlImgBrand">
+        </div>                
+        <mat-card-title>{{ article.brand }}</mat-card-title>
+        <mat-card-subtitle>{{ article.model }}</mat-card-subtitle>        
+      </mat-card-header>
+
+      <img mat-card-image [src]="article.urlImg" width="481" height="291" alt="Laptop Photo">
+
+      <mat-card-content>
+        <h5 class="teal-text text-lighten-3" *ngFor="let category of article.categories" class="{{ category | articleTypeColor }} activator">{{ category }}</h5>
+        <h6>{{ article.price }} €</h6>
+        <p>
+          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+          bred for hunting.
+        </p>
+      </mat-card-content> 
+
+    </mat-card>
+
+    <!-- <div class="row card-action">
+      <div class="col s12 m6 l4">
+        <a class="waves-effect waves-light btn blue" (click)="goToEditArticle(article)">Editer</a>
+      </div>
+      <div class="col s12 m6 l4">
+        <a class="waves-effect waves-light btn teal lighten-2" (click)="goToArticleList()">Retour</a>
+      </div>
+      <div class="col s12 m6 l4">
+        <a class="waves-effect waves-light btn red" (click)="deleteArticle(article)">Supprimer</a>
+      </div>            
+    </div> -->
   </div>
 </div>
-<h4 *ngIf='!article' class="center">
-  <app-loader></app-loader>
-</h4>
+

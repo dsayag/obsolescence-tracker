@@ -26,7 +26,7 @@ export class ArticleService {
 
   addArticle(article: Article): Observable<Article> {
     const httpOptions = {
-      headers: new HttpHeaders({ ' Content-Type': 'application/json' })
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
 
     return this.http.post<Article>('api/articles', article, httpOptions)
@@ -56,8 +56,9 @@ export class ArticleService {
   }
 
   searchArticleList(term: string): Observable<Article[]> {
+    // retourne la marque du produit
     if(term.trim()){      
-      return this.http.get<Article[]>(`api/articles/?name=${term}`)
+      return this.http.get<Article[]>(`api/articles/?brand=${term}&model=${term}`)
       .pipe(
         tap((response) => this.log(response)),
         catchError((error) => this.handleError(error, []))
@@ -65,7 +66,7 @@ export class ArticleService {
     } else{
       return of([]);      
     }    
-  }
+  }  
 
   private log(response: any) {
     console.table(response);
@@ -78,17 +79,11 @@ export class ArticleService {
 
   getArticleCategoryList(): string[]{
     return [
-      'Fruit',
-      'Légume',
-      'Produit de la ferme',
-      'Fromage',
-      'Produit laitier',
-      'Céréale',
-      'Maison',
-      'Epicerie sucrée',
-      'Epicerie salée',
-      'Boisson',
-      'Boisson alcoolisée',
+      'Mainstream',
+      'Ultraportable',
+      'Business',
+      'Gaming',
+      'CAD/3D modeling',
       'Sans catégorie'
     ];
   }

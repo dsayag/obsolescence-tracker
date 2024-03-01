@@ -6,11 +6,11 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 export class BorderCardDirective {
 
   private initialColor: string = '#F5F5F5';
-  private defaultColor: string = '#ffccbc';
-  private defaultHeight: number = 550;
+  private defaultColor: string = '#FFC107';
+  /* private defaultHeight: number = 550; */
 
   constructor(private el: ElementRef) {
-    this.setHeight(this.defaultHeight);
+    /* this.setHeight(this.defaultHeight); */
     this.setBorder(this.initialColor);
    }
 

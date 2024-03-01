@@ -13,7 +13,7 @@
               id="name"
               required
               pattern="^[a-zA-Z0-9àéèç ]{1,35}$"
-              [(ngModel)]="article.name" name="name"
+              [(ngModel)]="article.model" name="name"
               #name="ngModel">    
                 <div *ngIf="!name.valid && !name.pristine"
                   class="card-panel red accent-1">

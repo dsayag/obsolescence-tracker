@@ -12,6 +12,7 @@ import { EditArticleComponent } from './edit-article/edit-article.component';
 import { AddArticleComponent } from './add-article/add-article.component';
 import { SearchArticleComponent } from './search-article/search-article.component';
 import { LoaderComponent } from './loader/loader.component';
+import { MatCardModule } from '@angular/material/card';
 
 const articleRoutes: Routes = [
   { path: "edit/article/:id", component: EditArticleComponent },
@@ -35,7 +36,8 @@ const articleRoutes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forChild(articleRoutes)    
+    RouterModule.forChild(articleRoutes) ,
+    MatCardModule   
   ],
   providers: [ArticleService]
 })
